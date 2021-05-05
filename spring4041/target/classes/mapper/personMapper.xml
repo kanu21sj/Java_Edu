@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- sql문, crud정의 -->
+<mapper namespace="person">
+
+<!-- CRUD4가지 기능이 들어감 -->
+	<insert id="insert" parameterType="personVO">
+		insert into PERSON values (#{ID}, #{FIRST_NAME}, #{LAST_NAME}, #{EMAIL}, #{GENDER}, #{PHONE})
+	</insert>
+	<select id="all2" resultType="personVO">
+      select * from PERSON
+   </select>
+</mapper>

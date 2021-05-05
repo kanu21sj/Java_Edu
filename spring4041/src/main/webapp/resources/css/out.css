@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+/* 기본선택자(selector): 태그, id, class */
+
+.in { /* 그룹으로 묶어서 여러개 선택할 때 */
+	background: pink;
+	font-size: 20px
+}
+
+body { /* 태그 선택 */
+	color: white; /* 글자색 */
+}
+
+#b { /* 특정한거 하나 선택시 */
+	background: yellow;
+	color: rea;
+	font-size: 20px
+}

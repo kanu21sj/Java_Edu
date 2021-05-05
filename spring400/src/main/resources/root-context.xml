@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- bean: 싱글톤 객체 -->
+<!-- context파일: project 전체 영역에서 사용할 싱글톤 객체를 정의하는 파일 -->
+<!-- 스프링 프로그램이 시작할 때, 어노테이션과 이 파일을 읽어서 싱글톤을 만든다. -->
+
+<!-- dbcp 싱글톤 객체 필요(connector를 가지고 DB연결)
+	DataBase Connection Pool, DB 커넥션을 맺고 있는 객체 관리역할(효율성 증진)-->
+<!--  DBCP dbcp = new DBCP(); -->
+<bean id="dbcp" class="org.apache.commons.dbcp.BasicDataSource">
+
+   <!-- property를 통해 set 메서드 불러줌 -->
+   <property name="driverClassName" value="oracle.jdbc.OracleDriver"></property>
+   <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></property>
+   <property name="username" value="apple"></property>
+   <property name="password" value="1234"></property>
+</bean>
+
+<!-- my-config 싱글톤 객체 필요, myBatis 설정만 담당하는 
+	 mapper 관리해주는 config설정(sql문 관리), alias설정, dbcp 설정(연결담당) -->
+	 
+<!-- String configLocation; (기본형)정수,실수,문자,논리,String 그냥 값으로 넣어주면 됨 -->
+<!-- DataSource dataSource; (참조형)객체의 주소값을 넣어주어야 할 땐 ref로 해주어야 함 -->
+<bean id="config" class="org.mybatis.spring.SqlSessionFactoryBean">
+   <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+   <property name="dataSource" ref="dbcp"></property>
+</bean>
+ 
+<!-- myBatis 싱글톤 객체 필요(spring연결 역할)
+     => my-config에서 설정한 것을 가지고 객체 생성 -->
+
+<bean id="mybatis" class="org.mybatis.spring.SqlSessionTemplate">
+   <constructor-arg ref="config"></constructor-arg>
+</bean>
+
+</beans>

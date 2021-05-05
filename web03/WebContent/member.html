@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>회원가입화면</title>
+	</head>
+	<body>
+		<h2>회원가입화면입니다.</h2>
+		<hr color="red">
+		 <!-- form 태그는 값을 입력하고 싶을 때 사용 -->
+		 <!-- 입력값들은 모두 form 안에 들어가야 한다. -->
+		 <!-- action: 입력값을 받아서 처리하는 다음 페이지를 지정 -->
+		 <form action="member2.jsp">
+		 아이디: <input name="id"><br>
+		 패스워드: <input name="pw"><br>
+		 이름: <input name="name"><br>
+		 연락처: 
+		 <select name="company">
+		 	<option value="SK">SK</option>
+		 	<option value="LG">LG</option>
+		 	<option value="KT">KT</option>
+		 </select>
+		 <input name="tel"><br>
+		 성별:
+		 <!-- radio: 여러 개중 하나만 선택! -->
+		 <input type="radio" value="남자" name="gender">남자
+		 <input type="radio" value="여자" name="gender">여자
+		 <br>
+		 하고싶은말:
+		 <textarea rows="5" cols="20" name="word"></textarea>
+		 <br>
+		 취미: <!-- checkbox: 여러개 선택 가능! -->
+		 <input type="checkbox" value="달리기" name="hobby">달리기
+		 <input type="checkbox" value="독서" name="hobby">독서
+		 <input type="checkbox" value="등산" name="hobby">등산
+		 <hr>
+		 <br>
+		 <button type="submit">서버로 전송</button>
+		 </form>
+	</body>
+</html>

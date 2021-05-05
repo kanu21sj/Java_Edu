@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+/* li:nth-child(2n) { li중 짝수
+	background: white;
+}
+
+li:nth-child(2n+1) { li중 홀수
+	background: green;
+}
+
+li:first-child {
+	border-radius : 0 0 0 0px;
+}
+
+li:last-child {
+	border-radius : 0 0 0 0;
+} */
+
+input {
+	width: 700px;
+	height: 36px;
+	font-size: 20px;
+}
+
+button {
+	height: 40px;
+	font-size: 20px;
+}
+
+select {
+	font-size: 20px;
+}
+
+#li2 {
+	font-size: 20px;
+}
+
+li {
+	list-style: none;
+	float: left; 
+	padding: 5px;
+	/* background : pink; */
+}
+
+ul {
+	
+}
+
+#total { /* id를 선택해서 스타일을 지정할 때는 #을 앞에 쓴다. */
+	
+}
+
+#top {
+	width: 1800px;
+	height: 150px;
+	background: none;
+	font-size: 40px;
+}
+
+#top2 {
+	width: 1800px;
+	height: 60px;
+	background: green;
+	font-size: 25px;
+	/* padding: 5px; */
+}
+
+#top3 {
+	width: 170px;
+	height: 500px;
+	background: orange;
+	color: white;
+	top: 5px;
+	right: 0px;
+	position: fixed; /* 위치 고정. 다른 내용이 움직여도 얘는 안움직인다. */
+	border-radius: 0px 0px 50px 30px; /* 장바구니 모서리 둥근정도 설정 */
+	font-size: 17px;
+}
+
+#center { /* 메인페이지 쓰는사람 : 나 */
+	background: pink;
+	width: 1800px;
+	height: 2000px;
+}
+
+/* body{
+	color: green; key:value
+	font-size: 40px; 글자크기, 픽셀단위 꼭 붙여준다.
+} */
